@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <h1>Spread Operator</h1>
+    <script>
+        function sum(name,...args){
+            console.log(args);
+            document.write(name);
+            let sum = 0;
+            for(let i in args){
+                sum += args[i];
+            }
+            document.write(sum);
+        }
+
+        var arr1 = [10,20,30];
+        // ... is spread operator
+        sum('adnan',...arr1);
+
+        // it will return separate values of array.
+        console.log(...arr1);
+
+        // it will return an array.
+        console.log([...arr1]);
+
+
+        // concate two arrays
+
+        var arr2 = [40,50];
+
+        var arr3 = arr1.concat(arr2);
+
+        console.log(arr3);
+        // but we can do this without concate, simple
+
+        var arr3 = [...arr1,...arr2];
+        console.log(arr3);
+
+        var arr3 = [5,...arr1,...arr2,55];
+        console.log(arr3);
+
+        // merge object with spread operators
+
+        var obj1 = {
+            name : 'adnan',
+            age : 28
+        };
+
+        var obj2 = {
+            degree : 'software engineering'
+        }
+
+        var obj3 = {...obj1,...obj2};
+
+        console.log(obj3);
+
+    </script>
+</body>
+</html>

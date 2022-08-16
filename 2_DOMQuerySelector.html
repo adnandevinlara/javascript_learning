@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom Set and Get Methods</title>
+    </head>
+    <body>
+        <h1 id="heading" class="title">Dom Query Selector Methods</h1>
+        <h3  class="title">Dom Query Selector All Methods</h3>
+        <p>There are the different Objects use to targer DOM ekement</p>
+        <ol>
+           <li>Id : document.getElementById(id)</li>
+           <li>Class Name : document.getElementsByClassName(class)</li>
+           <li>Tag Name : document.getElementsByTagName(tag)</li> 
+        </ol>
+
+
+        <script>
+
+            /*
+            QuerySelector target only first available object/attribnute of the element (ignore rest elements).
+            And getElementsByClassName will return all element with same class. 
+            */
+
+            document.querySelector('#heading').innerHTML = "<h2>You are learning querySelector method in js</h2>"
+
+            var element;
+            element = document.querySelector('#heading').getAttribute('class');
+            console.log(element);
+            element = document.querySelector('#heading').attributes[1].value;
+            console.log(element);
+
+            element = document.querySelector('#heading');
+            console.log(element);
+
+
+
+            /*
+            QuerySelectorAll target All available object/attribnute of the elements.
+            It work same like getElementsByClassName which return all element with same class names. 
+            */
+
+            element = document.querySelectorAll('.title');
+            console.log(element);
+
+            element = document.querySelectorAll('ol');
+            console.log(element);
+            // now target single
+            element = document.querySelectorAll('ol')[0].innerHTML;
+            console.log(element);
+            // target attribute with common class name but unique id
+            element = document.querySelectorAll('#heading');
+            console.log(element);
+            
+        </script>
+    </body>
+    </html>

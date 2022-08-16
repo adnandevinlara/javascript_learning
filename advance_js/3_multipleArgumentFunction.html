@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Argument Function</title>
+</head>
+<body>
+    <h1>Multiple Argument Function</h1>
+    <script>
+        function sum(){
+            console.log(arguments);
+            let sum = 0;
+
+            for(let i in arguments){
+                sum += arguments[i];
+            }
+
+            document.write(sum + "<br>");
+        }
+        sum(10,20);
+        sum(30,40,10);
+
+        // Rest Operator
+        // ... is rest operator and args is an array which hold objects
+        function addition(name,...args){
+            console.log(arguments);
+            let sum = 0;
+
+            for(let i in args){
+                sum += args[i];
+            }
+
+            document.write(sum + "<br>");
+            document.write(`User name is ${name}.`);
+        }
+        addition('Adnan Zaib',10,20);
+        
+
+    </script>
+</body>
+</html>

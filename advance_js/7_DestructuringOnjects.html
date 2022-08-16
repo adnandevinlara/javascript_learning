@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Objects</title>
+</head>
+<body>
+    <h1>Destructuring Object</h1>
+    <script>
+        let info = {
+            name : 'adnan',
+            age : 25,
+            city : 'Lahore'
+        }
+        // variable names
+        // let {name,age,city} = info;
+        // console.log(city);
+        // variable names with alises
+        let {name : n,age : a,city : c} = info;
+        console.log(c);
+    </script>
+</body>
+</html>

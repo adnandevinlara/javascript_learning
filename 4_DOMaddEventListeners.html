@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Add Event Listeners</title>
+        
+        <style>
+        .abc {
+            text-transform: uppercase;        
+        }
+        .outer{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin: 30px auto;
+            
+        }
+        </style>
+    </head>
+    
+    <body class="wrapper">
+        <h1 class="abc">DOM Add Event Listeners</h1>
+        <p id="demo"></p>
+
+        <h2>useCapture example</h2>
+        <div class="outer">
+            outer div
+            <p class="outerpara"></p>
+            <div class="inner">
+                inner div
+                <p class="innerpara"></p>
+            </div>
+        </div>
+
+        <script>
+            // here have directly add event in script and call function onclick
+            var element;
+            element = document.querySelector(".abc").onclick = myFunction;
+            function myFunction(){
+                document.querySelector('.wrapper').style.background = "pink";
+            }
+
+            /*
+            DOM addEventListener() Method
+            syntex: addEventListener('eventName',functionName,useCapture);
+            ignore on keyword before in eventName, like:
+            click , mouseenter, mouseout ,dblclick etc 
+
+            this method take three parameter,third one will be discuss later on.
+            make sure first parameter will be event and second para will be function name that will be call on event. 
+            */
+
+            element = document.querySelector(".abc").addEventListener('click',function(){
+                document.querySelector("#demo").innerText = "This is EventListeners";
+            });
+
+            element = document.querySelector(".abc").addEventListener('mouseenter',anotherFunction);
+
+            function anotherFunction(){
+                // document.querySelector('.abc').style.color = "green";
+                this.style.color = "green";
+                //  this keyword points to the current element.
+            }
+
+            // we can also call different eventListeners with same event e.g click.
+
+            // useCapture
+
+            /*
+            when you have div inside another dive and bold have onclick eventListeners. if you click on inner div than outer div click event will call even you dint need it to call amd yoou also want which event call first and which event call later on. To deal with this scenario we use thirsd parameter in eventListeners method called useCapture.Let see with example.
+
+            */
+
+            // document.querySelector(".outer").addEventListener('click',fun1);
+            // document.querySelector(".outer").addEventListener('click',fun2);
+
+
+            document.querySelector(".outer").addEventListener('click',fun1,false);
+            document.querySelector(".outer").addEventListener('click',fun2,true);
+
+            function fun1(){
+                document.querySelector(".outerpara").innerText = 'outer div event called';
+            }
+            function fun2(){    
+                document.querySelector(".innerpara").innerText = 'inner div event called';
+            }
+
+
+
+            
+        </script>
+    </body>
+    </html>

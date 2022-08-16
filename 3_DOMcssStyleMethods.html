@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM CSS Style Methods</title>
+        
+        <style>
+        .abc {
+            text-transform: uppercase;        
+        }
+        </style>
+    </head>
+    
+    <body>
+        <h1 id="heading" class="title" style="color: indigo; font-weight: lighter;">DOM CSS Style Methods</h1>
+        <p class="para">There are three methods</p>
+        <ol>
+            <li>Style</li>
+            <li>className</li>
+            <li>classList</li> 
+         </ol>
+         <script>
+            var element;
+            // get the style color property using Style method
+            element = document.querySelector("#heading").style.color;
+            console.log(element);
+            // now chnage the color property value to green like so.
+            element = document.querySelector("#heading").style.color = 'green';
+            console.log(element);
+
+            // get class name and set new className
+            element = document.querySelector("#heading").className;
+            console.log(element);
+            // set new clasName here
+            element = document.querySelector("#heading").className = 'abc xyz adnan';
+
+            // classList
+            // It return us tokken array of class names
+            // On the other hand className only return string of classes.
+
+            element = document.querySelector("#heading").classList;
+            element.add('anotherClass', 'orAnOtherClass');
+            console.log(element);
+            element.remove('anotherClass', 'orAnOtherClass');
+            console.log(element);
+
+
+
+            
+         </script>
+    </body>
+</html>

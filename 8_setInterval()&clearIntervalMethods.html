@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval and clearInterval Method</title>
+</head>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+    }
+</style>
+<body>
+    <h2>setInterval and clearInterval Methods</h2>
+    <h3>JS Anmation</h3>
+    <p>If we want to animate any element in html than we use setInterval method</p>
+    <h3>Syntex</h3>
+    <p>setInterval(functionName,milisecond)</p>
+    <p>1000ms = 1 second</p>
+    <p>Function will automatically call after given interval of time</p>
+    <h3>How to stop the animation ?</h3>
+    <p>To stop animation at perticular time we use method <strong>clearInterval</strong></p>
+
+    <div class="box" id="test">
+
+    </div>
+
+    <script>
+        var a = 0;
+        var interval = setInterval(Anim,100);
+        function Anim(){
+            a = a + 10;
+            
+            if(a==200){
+                clearInterval(interval);
+            }else{
+                var target = document.querySelector('#test');
+                target.style.marginLeft = a+'px';
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol Data Type</title>
+</head>
+<body>
+    <h1>Symbol Data Type</h1>
+    <script>
+        let id = Symbol('hello');
+        let city = Symbol('Lahore');
+        console.log(id);
+        console.log(typeof id);
+
+        // alert(id.toString());
+        // alert(id.description);
+        
+        // Use Symbol in object
+
+        let user = {
+            name : 'adnan',
+            class : 'WEB',
+            [id] : 25
+        }
+
+        // another way to assign Symbol value to object
+
+        user[city] = 'Lahore';
+
+        console.log(user);
+        console.log(user.class);
+        console.log(user.id); //undefined
+        console.log(user[id]);
+
+        // it will skip symbol values in object
+        for (let key in user){
+            console.log(key);
+        }
+
+        // it will skip symbol values in object,when object convert into json
+
+        console.log(JSON.stringify(user));
+    </script>
+</body>
+</html>

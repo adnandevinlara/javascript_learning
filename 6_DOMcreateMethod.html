@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dom Create methods</title>
+</head>
+<body>
+    <h1 id="heading">Dom Create methods</h1>
+    <div id="content">
+        <h3 id="sub-heading">sub-heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam earum incidunt a accusantium totam ex. Quisquam eos aspernatur veritatis culpa, sequi itaque facere vero magnam quos enim. Mollitia, debitis voluptatem!</p>
+    </div>
+    
+    <script>
+        var newElement = document.createElement("p");
+        console.log(newElement);
+
+        var newTextNode = document.createTextNode("This is dummy text");
+        console.log(newTextNode);
+
+        var newComment = document.createComment("This is comment");
+        console.log(newComment);
+
+        // Now see we have created tag and text node. Now how to attach text with tag p
+        // we will use appendChild method to attach this text with tag.
+        // this method append node at the end
+        newElement.appendChild(newTextNode);
+        console.log(newElement);
+        document.getElementById("content").appendChild(newTextNode);
+        document.getElementById("content").appendChild(newComment);
+
+        var target = document.querySelector('#content').childNodes;
+        console.log(target);
+        // insert before
+        // this method append element before the tag element.
+        target.insertBefore(newElement,target.childNodes[3]);
+
+        // other methods
+        // insertAdjacentElement
+        // insertAdjacentHTML
+        // insertAdjacentText
+
+
+    </script>
+</body>
+</html>

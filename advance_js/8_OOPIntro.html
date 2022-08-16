@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+        class hello{
+            thanks(){
+                console.log("I'm very gratefull");
+            }
+            sorry(){
+                console.log("I'm sorry for this.!");
+            }
+        }
+
+        let obj = new hello();
+        obj.thanks();
+
+
+        // types of Method in OOP
+        // 1 Constructor
+        // Constructor will automatically call on making new object.
+        class student{
+            // 1 Constructor
+            constructor(name){
+                // let name;
+                this.name = name;
+                console.log('constructor call');
+                
+            }
+            // 2 Prototype Method
+            profile(){
+                console.log(`Hello ${this.name}`);
+            }
+            // 3 Static Method
+            static staticMethod(){
+                console.log('static method can be call without object');
+            }
+        }
+
+        let a = new student;
+        // basic way to assign value to variable
+        a.name = 'Adnan Zaib';
+        a.profile();
+
+        let b = new student('Aiza Adnan');
+        b.profile();
+
+        // method of calling static method
+        student.staticMethod();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literals</title>
+</head>
+<body>
+    <script>
+        let n = "name";
+        var obj = {
+            [n] : 'Adnan',
+            ['teacher'+n] : 'Zaib',
+            degree : 'BSSE',
+            // about : function(){
+            //     return `${this.name} is student of ${this.teachername}.`
+            // }
+            // about(){
+            //     return `${this.name} is student of ${this.teachername}.`
+            //     },
+            'about me'(){
+                return `${this.name} is student of ${this.teachername}.`
+                },
+            }
+        console.log(obj);
+        console.log(obj.name);
+        console.log(obj.teachername);
+        // there are thre way to call function inside obj.
+        // console.log(obj.about());
+        // console.log(obj['about']());
+        console.log(obj['about me']());
+        
+        // we can also make function return object.
+        let f_name = 'adnan';
+        let l_name = 'zaib';
+        let age = 25;
+
+        function student(f_name,l_name_age){
+            let fullname = f_name+' '+l_name;
+            return {fullname,age};
+        }
+        let s = student(f_name,l_name,age);
+        console.log(s);
+        console.log(s.fullname);
+    </script>
+</body>
+</html>

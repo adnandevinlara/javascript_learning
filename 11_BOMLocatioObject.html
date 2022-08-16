@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Location Object</title>
+</head>
+<body>
+    <h1>Location Object</h1>
+    <button onclick="google()">Google</button>
+    <button onclick="reload()">Reload</button>
+    <button onclick="assign()">Assign</button>
+    <button onclick="replace()">Replace</button>
+    <p id="demo"></p>
+    <script>
+        let origin = window.location.origin;
+        document.getElementById('demo').innerHTML = origin;
+        
+        function google(){
+            location.href = 'https://www.google.com';
+        }
+        /*
+        There are three location object methods
+        1 Assign()
+        It is use to add parameter to the current url
+        2 Reload()
+        It is use to reload the current window (refresh)
+
+        3 Replace()
+       Replace work like Assign method with minor difference
+       when we replace current page with new page than existing page will be remove from history.
+        we can't get it by going back with bach arrow button.
+        or it will disaple the bacj arrow button.
+        */
+
+       function assign() {
+        location.assign("https://www.Google.com");
+        } 
+
+        function reload() {
+            location.reload();
+        }
+        function replace(){
+            location.replace("https://www.google.com");
+        }
+
+    </script>
+</body>
+</html>

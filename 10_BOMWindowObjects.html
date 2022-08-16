@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Window Objects</title>
+   
+</head>
+<body>
+    <h1>BOM Window Objects</h1>
+    <button onclick="openWindow()">Open Window</button>
+    <button onclick="resizeToWindow()">Resize To Window</button>
+    <button onclick="resizeByWindow()">Resize By Window</button>
+    <button onclick="closeWindow()">Close Window</button>
+    <script>
+        var mywindow;
+        function openWindow(){
+            mywindow=window.open('','','width=400px,height=200px,left=60px,top=40px');
+            mywindow.document.write('<p>This is paragraph</p>')
+        }
+
+        function resizeToWindow(){
+            // it will resize window to given with and height
+            mywindow.resizeTo(300,300);
+        }
+
+        function resizeByWindow(){
+            // it will resize window relative to the existing width and height,(it will add width and height to the exsting width and height of the window).
+            // 100+400 = 250px
+            mywindow.resizeBy(400,400);
+        }
+
+        function closeWindow(){
+            mywindow.close();
+        }
+    </script>
+</body>
+</html>

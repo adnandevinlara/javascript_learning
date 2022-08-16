@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Object</title>
+</head>
+<body>
+    <button onclick="back()">Back</button>
+    <button onclick="forward()">Forward</button>
+    <a href="https://www.youtube.com">youtube</a>
+    <br>
+    <p>Go back and forth with go method! </p>
+    <button onclick="back()">Go Back</button>
+    <button onclick="forward()">Go Forward</button>
+<script>
+    console.log(history);
+    // number of page in history
+    console.log(history.length);
+
+    console.log(history.back);
+    console.log(history);
+
+    function back(){
+        history.back();
+    }
+    function forward(){
+        history.forward();
+    }
+    function goForward(){
+        // it will go forward by one page
+        history.go(1);
+    }
+    function goBack(){
+        // it will  go back by one page
+        history.go(-1);
+    }
+</script>    
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One time Animation</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>One Time Animation</h1>
+    <h2>setTimeout() and clearTimeout() Methods</h2>
+    <p>if you want to perform any animation or any operation at perticular time or after perticular time, according to your need than you will use <strong>setTimeout(funcioName,millisecond)</strong></p>
+    <p>This function run only one time</p>
+    <p>if you want to run this function after perticular of time than the method we use is <strong>clearTimeout()</strong></p>
+    <div class="box" id="test"></div>
+    <br>
+    <button onclick="stopAnimation()">Stop Animation</button>
+    <script>
+        var id = setTimeout(Anim,3000);
+
+        function Anim(){
+            console.log('hello');
+            var target = document.querySelector('#test');
+            target.style.width = '500px';
+        }
+
+        // clearTimeout 
+        // stop animation/operation
+        function stopAnimation(){
+            clearTimeout(id);
+        }
+
+
+
+        // other info
+            // BOM method moveBy() absolute position se work krta hai.
+            // myWind.moveTo(200,200);
+            // or moveTo() reltive position se work krti hai.
+            // myWind.moveBy(200,200);
+            // myWind.focus();
+
+            // scrollBy()
+            // to scroll vertically
+            // myWind.scrollBy(0,20);
+            // myWind.scrollBy(0,-20);
+
+            // to scroll horizontaly
+            // myWind.scrollBy(0,20);
+            // myWind.scrollBy(0,-20);
+            
+            // To gte to top of page
+            // myWind.scrollBy(0,0);
+            // 0 position at x axis and 20 pixel from y axis top
+    </script>
+</body>
+</html>

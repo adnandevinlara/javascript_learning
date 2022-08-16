@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template String</title>
+</head>
+<body>
+    <h1>Template String</h1>
+    <script>
+        // old Way
+        let user = 'Adnan Zaib';
+        let marks = 920;
+        let data = `Hello "${user}"
+         you have obtained
+        ${marks} 'marks'.`;
+        // multiline show in console.log
+        document.write("Hello " + user + " Wellcome back.");
+        // Using Template String
+        document.write(data);
+
+        // Call function with template string and show function data with return statement
+        let f_name = 'Aiza';
+        let l_name = 'Adnan';
+        function templateString(f_name,l_name){
+            return `${f_name} ${l_name}`;
+        }
+        document.write(`My Name is  ${templateString(f_name,l_name)}`);
+
+        window.addEventListener('load',()=>{
+            alert('arrow function call in addEventListener');
+        })
+    </script>
+</body>
+</html>

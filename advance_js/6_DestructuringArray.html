@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Arrays</title>
+</head>
+<body>
+    <h1>Destructuring arrays</h1>
+    <p>This feature comes in ES6 version on javascript  </p>
+    <p>If we wan to assign arrays value to variables than for that we need to write lot of code,if there are many data in array. forexample</p>
+    <code>
+        let user = ['adnan zaib',25];
+        <br>
+        let name = user[0];
+        <br>
+        let age = user[1];
+        <br>
+        // and so on
+    </code>
+    <p>In ES6 version new feature introduced of destructuring and minize the syntext</p>
+    <code>
+        let[name,age] = user;
+    </code>
+
+    <script>
+        
+        let user = ['Adnan',25,'Lahore'];
+        // let [name,age,city,address] = user;
+        
+        // we can also assign default value
+        // let [name,age=18,city,address] = user;
+
+        // console.log(name)
+        // console.log(age)
+        // console.log(city)
+        // console.log(address)
+
+        // Make Nested Array
+        console.log('NestedArray')
+        let nestedArray = ['Adnan',25,'Lahore',['Male',60000]];
+
+        let [name,age,city,[gender,salary]] = nestedArray;
+        console.log(gender);
+        console.log(salary);
+
+        // we can also use rest operators
+
+        let rest = ['Adnan',25,'Lahore'];
+        let [my_name,...args] = rest;
+        console.log(my_name);
+
+        // we can pass array to function
+        console.log('we can pass array to function');
+        function detail([name,age,city]){
+            console.log(name);
+            console.log(age)
+        }
+
+        detail(['aiza',25,'Lahore']);
+
+        // we can return array from function as well
+        console.log('we can return array from function as well');
+
+
+        function getDetails(){
+            return ['zimal',2,'Lahore'];
+        }
+
+        [name,age,city] = getDetails();
+        console.log(city);
+
+
+    </script>
+</body>
+</html>

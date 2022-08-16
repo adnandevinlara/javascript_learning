@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom Set and Get Methods</title>
+    </head>
+    <body>
+        <h1 id="heading">Dom Set and Get Methods</h1>
+        <input id="first_name" class="abc efg" name="first_name" value="Adnan" placeholder="Enter First Name..." style="border: 3px solid" onclick="xyz()" />
+        <script>
+
+            // How to get the attribute of elements
+
+
+            // innerHTML: To get the inner html of the element
+            // innerText: To get the inner text of the element
+            var element  = document.head.innerHTML;
+            console.log('Taget DOM Element :'+ element);
+
+            var el  = document.getElementById('heading').innerText;
+            console.log('Taget DOM Element :'+ el);
+
+            // getAttribute : basicaly it return us the value of attribute
+            // attribute could be id,class,placeholder onclick src etc.
+            var ele;
+            ele = document.getElementById("first_name").getAttribute("class");
+            console.log('Target attribute of DOM Element :'+ ele);
+            ele = document.getElementById("first_name").getAttribute("id");
+            console.log('Target attribute of DOM Element :'+ ele);
+            ele = document.getElementById("first_name").getAttribute("style");
+            console.log('Target attribute of DOM Element :'+ ele);
+            ele = document.getElementById("first_name").getAttribute("placeholder");
+            console.log('Target attribute of DOM Element :'+ ele);
+            ele = document.getElementById("first_name").getAttribute("onclick");
+            console.log('Target attribute of DOM Element :'+ ele);
+            
+            // getAttributeNode : It will return us property name with its value e.g onclick="xyz"
+            console.log('Target attributeNode of DOM Element');
+            ele = document.getElementById("first_name").getAttributeNode("style");
+            console.log(ele.value);
+            console.log(ele.nodeValue);
+
+            // Attributes : It will return all the attributes inside the purticular element in the form of array. 
+
+            ele = document.getElementById("first_name").attributes;
+            console.log(ele);
+
+            // if i want to get the perticular object value.
+            ele = document.getElementById("first_name").attributes[2];
+            console.log(ele); // name = "first_name"
+            // To get the vlaue of object attribute.
+            ele = document.getElementById("first_name").attributes[3].value;
+            console.log(ele); // first_name
+
+            // How to set attributes value of elements.
+            // we can change
+            /*
+            1 innerText
+            2 innerHTML
+            3 setAttribute
+            4 Attribute
+            5 removeAttribute
+
+
+            */
+
+            ele = document.getElementById("heading").innerHTML = "<h2> Setting innerHTML value </h2>"
+
+            // set Attribute value
+            /*
+            i change  class name here
+            */
+            ele = document.getElementById("first_name").setAttribute('class','newclass');
+            ele = document.getElementById("first_name").getAttribute("class");
+            console.log(ele);
+
+            // let change the background color of body tag
+
+            ele = document.body.setAttribute('style','background-color:pink');
+
+
+            // change value using attribute method
+
+            document.getElementById("first_name").attributes[1].value = "fgh";
+
+            ele = document.getElementById("first_name").getAttribute("class");
+            
+            console.log(ele);
+
+
+            // removeAttribute
+
+            ele = document.getElementById("first_name").removeAttribute("class");
+
+            console.log(document.body);
+
+        </script>
+    </body>
+</html>

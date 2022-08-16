@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <h1>Inheritance</h1>
+    <script>
+        class employee{
+            constructor(name,age,salary){
+                this.emp_name = name;
+                this.emp_age = age;
+                this.emp_salary = salary;
+                console.log('Contructor : Employee ' + this.emp_name);
+                
+            }
+
+            info(){
+                
+                console.log('Employee Name : ' + this.emp_name);
+                
+                document.write(`<h1>Employee Class</h1> <br>
+                    Name : ${this.emp_name} <br>
+                    Age : ${this.emp_age} <br>
+                    Salary : ${this.emp_salary} <br>
+                `)
+            }
+        }
+
+        class manager extends employee{
+            
+            info(){
+                // super.info();
+                let travelAllownce = 1200;
+                let mobileAllownce = 1000;
+                let total_salary = this.emp_salary + travelAllownce + mobileAllownce;
+                document.write(`<h1>Manager Class</h1> <br>
+                    Name : ${this.emp_name} <br>
+                    Age : ${this.emp_age} <br>
+                    Salary : ${total_salary} <br>
+                `)
+                // super.info();
+                console.log('Manager Name : ' + this.emp_name);
+            }
+        }
+
+
+        class test extends manager{
+            
+        }
+
+            // let a = new manager('adnan zaib',25,40000);
+            // let b = new employee('Ali zaib',30,40000);
+            // a.info();
+            // b.info();
+
+        let c = new test('Ali zaib',30,70000);
+        c.info();
+    </script>
+</body>
+</html>

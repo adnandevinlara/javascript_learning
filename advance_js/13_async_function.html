@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Function</title>
+</head>
+<body>
+    <h1>Async Function</h1>
+    <script>
+        async function test(){
+            return "calling a synce function";
+        }
+
+        // another way to write async function
+
+        let newTest = async function(){
+            return "Another way to call async function";
+        }
+
+        test().then((result)=>{
+            console.log(result);
+        })
+
+        newTest().then((result)=>{
+            console.log(result);
+        })
+    </script>
+</body>
+</html>
